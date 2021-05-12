@@ -1,0 +1,12 @@
+require 'rails_helper'
+
+RSpec.describe "clinics index page", type: :feature do
+  it "can see all clinic names" do
+    clinic1 = Clinic.create!(name: 'First Priority', open: false, computers: 80)
+    clinic2 = Clinic.create!(name: 'jkdsjka', open: false, computers: 80)
+
+    visit "/clinics"
+    expect(page).to have_content(clinic1.name)
+    expect(page).to have_content(clinic2.name)
+  end
+end
