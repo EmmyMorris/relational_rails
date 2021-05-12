@@ -1,5 +1,5 @@
 class HospitalController < ApplicationController
   def index
-    @hospitals = ['St. Lukes', 'Sky Ridge', 'Denver Health']
+    @hospitals = Hospital.all
   end
 end
