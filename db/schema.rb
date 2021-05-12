@@ -10,43 +10,47 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_11_025245) do
+ActiveRecord::Schema.define(version: 2021_05_12_015045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "clinics", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.boolean "open_close"
     t.integer "computers"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "doctors", force: :cascade do |t|
-    t.integer "clinic_id"
     t.string "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.boolean "available"
     t.float "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "clinic_id"
+    t.index ["clinic_id"], name: "index_doctors_on_clinic_id"
   end
 
   create_table "hospitals", force: :cascade do |t|
     t.string "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.boolean "max_capacity"
     t.integer "beds"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "patients", force: :cascade do |t|
-    t.integer "hospital_id"
     t.string "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
     t.boolean "visitors"
     t.integer "age"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "hospital_id"
+    t.index ["hospital_id"], name: "index_patients_on_hospital_id"
   end
 
+  add_foreign_key "doctors", "clinics"
+  add_foreign_key "patients", "hospitals"
 end
