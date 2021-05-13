@@ -16,7 +16,6 @@ RSpec.describe "hospitals index page", type: :feature do
 
     visit "/hospitals/#{hospital1.id}"
     within "#hospital_details" do
-      save_and_open_page
       expect(page).to have_content("id: #{hospital1.id}")
     end
   end

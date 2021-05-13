@@ -1,5 +1,9 @@
+<a href="/patients"></a>
 <h1>All Patients</h1>
 
 <% @patients.each do |patient| %>
-  <h3><%= patient.name %></h3>
+  <h3>name: <%= patient.name %></h3>
+  <p>visitors: <%= patient.visitors %></p>
+  <p>age: <%= patient.age %></p>
+  <p>Hospital: <%= patient.hospital_id %>
 <% end %>
