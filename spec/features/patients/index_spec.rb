@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "patientss index page", type: :feature do
+RSpec.describe "patients index page", type: :feature do
   it "can see all patients" do
     hospital = Hospital.create!(name: 'St. Lukes', max_capacity: false, beds: 300)
     hospital.patients.create!(name: 'Miko', visitors: true, age: 37)
@@ -17,6 +17,5 @@ RSpec.describe "patientss index page", type: :feature do
     expect(page).to have_content("#{hospital.patients.second.name}")
     expect(page).to have_content("#{hospital_2.patients.first.name}")
     expect(page).to have_content("#{hospital_2.patients.second.name}")
-    # expect(page).to have_content(hospital_2.patients)
   end
 end
