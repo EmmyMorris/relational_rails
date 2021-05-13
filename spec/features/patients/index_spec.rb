@@ -2,6 +2,10 @@ require 'rails_helper'
 
 RSpec.describe "patients index page", type: :feature do
   it "can see all patients" do
+    # User Story 3, Child Index (x2)
+    # As a visitor
+    # When I visit '/child_table_name'
+    # Then I see each Child in the system including the Child's attributes:
     hospital = Hospital.create!(name: 'St. Lukes', max_capacity: false, beds: 300)
     hospital.patients.create!(name: 'Miko', visitors: true, age: 37)
     hospital.patients.create!(name: 'Tyler', visitors: false, age: 20)
