@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2021_05_12_015045) do
 
   create_table "clinics", force: :cascade do |t|
     t.string "name"
-    t.boolean "open_close"
+    t.boolean "open"
     t.integer "computers"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
