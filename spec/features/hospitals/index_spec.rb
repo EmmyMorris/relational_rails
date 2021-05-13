@@ -14,8 +14,10 @@ RSpec.describe "hospitals index page", type: :feature do
     hospital1 = Hospital.create!(id: 1, name: 'St. Lukes', max_capacity: false, beds: 300)
     hospital2 = Hospital.create!(name: 'cdskjl', max_capacity: true, beds: 500)
 
-    visit "/hospitals/:id"
-    expect(page).to have_content(hospital1)
-    # expect(page).to have_content(hospital2.name, hospital2.max_capacity, hospital2.beds)
+    visit "/hospitals/#{hospital1.id}"
+    within "#hospital_details" do
+      save_and_open_page
+      expect(page).to have_content("id: #{hospital1.id}")
+    end
   end
 end

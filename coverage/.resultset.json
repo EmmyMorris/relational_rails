@@ -262,6 +262,7 @@
       "/Users/emmymorris/turing/2module/projects/relational_rails/app/models/hospital.rb": {
         "lines": [
           1,
+          1,
           null
         ]
       },
@@ -280,6 +281,7 @@
           null,
           null,
           1,
+          null,
           1,
           null,
           null
@@ -292,6 +294,6 @@
         ]
       }
     },
-    "timestamp": 1620861171
+    "timestamp": 1620869857
   }
 }
