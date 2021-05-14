@@ -4,7 +4,10 @@ Rails.application.routes.draw do
   # get '/', to: 'welcome#index'
   get '/hospitals', to: 'hospitals#index'
   get '/hospitals/:id', to: 'hospitals#show'
+  get '/hospitals/:hospital_id/patients', to: 'hospital_patients#index'
+
   get '/patients', to: 'patients#index'
+  get '/patients/:id', to: 'patients#show'
 
   get '/clinics', to: 'clinics#index'
   get '/clinics/:id', to: 'clinics#show'
