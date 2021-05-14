@@ -1,5 +1,5 @@
 <h1>All Hospitals</h1>
 
 <% @hospitals.each do |hospital| %>
-  <h3><%= hospital.name %></h3>
+  <h3><%= hospital.name %>: <%= hospital.created_at %></h3>
 <% end %>

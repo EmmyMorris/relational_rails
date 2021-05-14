@@ -2,7 +2,6 @@ require 'rails_helper'
 
 RSpec.describe "clinics index page", type: :feature do
   it "can see all clinic names" do
-    # User Story 1
     # For each parent table
     # As a visitor
     # When I visit '/parents'
