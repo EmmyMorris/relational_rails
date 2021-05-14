@@ -17,8 +17,22 @@ RSpec.describe "hospitals index page", type: :feature do
       expect(page).to have_content(hospital_1.name)
       expect(page).to have_content(hospital_2.name)
     end
+    
+  it "can see the hospitals table" do
+    # User Story 2, Parent Show (x2)
+    # As a visitor
+    # When I visit '/parents/:id'
+    # Then I see the parent with that id including the parent's attributes:
+    # - data from each column that is on the parent table
+    hospital1 = Hospital.create!(id: 1, name: 'St. Lukes', max_capacity: false, beds: 300)
+    hospital2 = Hospital.create!(name: 'cdskjl', max_capacity: true, beds: 500)
 
-    it "can see all hospital names in order of created_at" do
+    visit "/hospitals/#{hospital1.id}"
+    within "#hospital_details" do
+    expect(page).to have_content("id: #{hospital1.id}")
+    end
+    
+   it "can see all hospital names in order of created_at" do
       # User Story 6, Parent Index sorted by Most Recently Created (x2)
       # As a visitor
       # When I visit the parent index,
@@ -32,6 +46,6 @@ RSpec.describe "hospitals index page", type: :feature do
       expect(page).to have_content(hospital_1.name)
       expect(page).to have_content(hospital_2.name)
       expect(hospital_2.name).to appear_before(hospital_1.name)
-    end
+   end
   end
 end

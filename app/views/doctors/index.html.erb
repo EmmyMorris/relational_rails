@@ -1,5 +1,22 @@
+<a href="/doctors"></a>
 <h1>All Doctors</h1>
-
-<% @doctors.each do |doctor| %>
-  <h3><%= doctor.name %></h3>
-<% end %>
+  <table>
+    <tr>
+      <th>id</th>
+      <th>name</th>
+      <th>available</th>
+      <th>rating</th>
+      <th>created_at</th>
+      <th>updated_at</th>
+    </tr>
+    <tr>
+      <% @doctors.each do |doctor| %>
+      <ul><td><%= doctor.id %></td>
+      <td><%= doctor.name %></td>
+      <td><%= doctor.available %></td>
+      <td><%= doctor.rating %></td>
+      <td><%= doctor.created_at %></td>
+      <td><%= doctor.updated_at %></td></ul>
+      <% end %>
+    </tr>
+  </table>
