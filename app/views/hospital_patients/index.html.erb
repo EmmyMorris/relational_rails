@@ -1,4 +1,9 @@
-<a href="/hospitals">Hospital Index</a> <a href="/patients">Patient Index</a> <a href="/clinics">Clinic Index</a> <a href="/doctors">Doctor Index</a>
+<!-- <a href="/hospitals">Hospital Index</a> <a href="/patients">Patient Index</a> <a href="/clinics">Clinic Index</a> <a href="/doctors">Doctor Index</a> -->
+<%= link_to "Hospital Index", "/hospitals" %>
+<%= link_to "Patient Index", "/patients" %>
+<%= link_to "Clinic Index", "/clinics" %>
+<%= link_to "Doctor Index", "/doctors" %>
+
 <% @patients.each do |patient| %>
   <h3>name: <%= patient.name %></h3>
   <p>id: <%= patient.id %></p>
