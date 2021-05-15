@@ -1,5 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe Hospitals, type: :model do
-
+RSpec.describe Hospital, type: :model do
+  describe 'relationships' do
+    it {should have_many :patients}
+  end
 end
