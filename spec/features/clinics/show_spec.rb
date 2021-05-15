@@ -30,4 +30,14 @@ RSpec.describe "clinics show page", type: :feature do
     expect(page).to have_content(clinic.id)
     expect(page).to have_content(clinic.doctors.count)
   end
+
+  it "has links to doctor index" do
+    # User Story 8
+    # As a visitor
+    # When I visit any page on the site
+    # Then I see a link at the top of the page that takes me to the Child Index
+    visit "/doctors"
+    click_on "Doctor Index"
+    expect(current_path).to eq("/doctors")
+  end
 end
