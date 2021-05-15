@@ -36,7 +36,9 @@ RSpec.describe "clinics show page", type: :feature do
     # As a visitor
     # When I visit any page on the site
     # Then I see a link at the top of the page that takes me to the Child Index
-    visit "/doctors"
+    clinic = Clinic.create!(name: 'First Priority', open: false, computers: 80)
+    visit "/clinics/#{clinic.id}"
+
     click_on "Doctor Index"
     expect(current_path).to eq("/doctors")
   end
