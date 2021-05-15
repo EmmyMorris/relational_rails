@@ -2,6 +2,7 @@
 <h1>Clinic Table</h1>
   <table>
     <tr>
+      <th>doctors</th>
       <th>id</th>
       <th>name</th>
       <th>open</th>
@@ -10,6 +11,7 @@
       <th>updated_at</th>
     </tr>
     <tr>
+      <td><%= @clinic.doctors.count %></td>
       <td><%= @clinic.id %></td>
       <td><%= @clinic.name %></td>
       <td><%= @clinic.open %></td>
