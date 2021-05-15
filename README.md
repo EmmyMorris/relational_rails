@@ -1,5 +1,5 @@
 # README
-`/Users/sidarth/turing/2module/projects/relational_rails/download.png`
+![alt text](/download.png)
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
