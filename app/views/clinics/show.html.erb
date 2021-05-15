@@ -1,7 +1,9 @@
+<a href="/hospitals">Hospital Index</a> <a href="/patients">Patient Index</a> <a href="/clinics">Clinic Index</a> <a href="/doctors">Doctor Index</a>
 <a href="/clinics"></a>
 <h1>Clinic Table</h1>
   <table>
     <tr>
+      <th>doctors</th>
       <th>id</th>
       <th>name</th>
       <th>open</th>
@@ -10,6 +12,7 @@
       <th>updated_at</th>
     </tr>
     <tr>
+      <td><%= @clinic.doctors.count %></td>
       <td><%= @clinic.id %></td>
       <td><%= @clinic.name %></td>
       <td><%= @clinic.open %></td>

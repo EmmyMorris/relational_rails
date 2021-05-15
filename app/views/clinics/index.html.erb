@@ -1,5 +1,6 @@
+<a href="/hospitals">Hospital Index</a> <a href="/patients">Patient Index</a> <a href="/clinics">Clinic Index</a> <a href="/doctors">Doctor Index</a>
 <h1>All Clinics</h1>
 
 <% @clinics.each do |clinic| %>
-  <h3><%= clinic.name %></h3>
+  <h3><%= clinic.name%>: <%= clinic.created_at %> </h3>
 <% end %>
