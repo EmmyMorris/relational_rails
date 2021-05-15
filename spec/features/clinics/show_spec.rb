@@ -30,4 +30,40 @@ RSpec.describe "clinics show page", type: :feature do
     expect(page).to have_content(clinic.id)
     expect(page).to have_content(clinic.doctors.count)
   end
+
+  it "has links to doctor index" do
+    # User Story 8
+    # As a visitor
+    # When I visit any page on the site
+    # Then I see a link at the top of the page that takes me to the Child Index
+    clinic = Clinic.create!(name: 'First Priority', open: false, computers: 80)
+    visit "/clinics/#{clinic.id}"
+
+    click_on "Doctor Index"
+    expect(current_path).to eq("/doctors")
+  end
+
+  it "has links to clinic index" do
+    # User Story 9
+    # As a visitor
+    # When I visit any page on the site
+    # Then I see a link at the top of the page that takes me to the Parent Index
+    clinic = Clinic.create!(name: 'First Priority', open: false, computers: 80)
+    visit "/clinics/#{clinic.id}"
+
+    click_on "Clinic Index"
+    expect(current_path).to eq("/clinics")
+  end
+
+  it "has links to Clinic-Doctor index" do
+    # User Story 10
+    # As a visitor
+    # When I visit a parent show page ('/parents/:id')
+    # Then I see a link to take me to that parent's `child_table_name` page ('/parents/:id/child_table_name')
+    clinic = Clinic.create!(name: 'First Priority', open: false, computers: 80)
+    visit "/clinics/#{clinic.id}"
+
+    click_on "Clinic-Doctor Index"
+    expect(current_path).to eq("/clinics/#{clinic.id}/doctors")
+  end
 end
