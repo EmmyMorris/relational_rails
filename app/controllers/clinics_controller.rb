@@ -1,6 +1,6 @@
 class ClinicsController < ApplicationController
   def index
-    @clinics = Clinic.all
+    @clinics = Clinic.all.order("created_at DESC")
   end
 
   def show
