@@ -3,12 +3,13 @@
 <%= link_to "Patient Index", "/patients" %>
 <%= link_to "Clinic Index", "/clinics" %>
 <%= link_to "Doctor Index", "/doctors" %>
-<a href="/doctors"></a>
+<a href="/doctors/:id"></a>
 <h1>Doctor</h1>
 
+<h3>Name: <%= @doctor.name %></h3>
 <p>id: <%= @doctor.id %></p>
-<p>name: <%= @doctor.name %></p>
-<p>available: <%= @doctor.available %></p>
-<p>rating: <%= @doctor.rating %></p>
-<p>created at: <%= @doctor.created_at %></p>
-<p>updated at: <%= @doctor.updated_at %></p>
+<p>Available: <%= @doctor.available %></p>
+<p>Rating: <%= @doctor.rating %></p>
+<p>Clinic id: <%= @doctor.clinic_id %></p>
+<p>Created at: <%= @doctor.created_at %></p>
+<p>Updated at: <%= @doctor.updated_at %></p>
