@@ -6,23 +6,11 @@
 <br><%= link_to 'Clinic-Doctor Index', "/clinics/#{@clinic.id}/doctors" %>
 <a href="/clinics"></a>
 <h1>Clinic Table</h1>
-  <table>
-    <tr>
-      <th>doctors</th>
-      <th>id</th>
-      <th>name</th>
-      <th>open</th>
-      <th>computers</th>
-      <th>created_at</th>
-      <th>updated_at</th>
-    </tr>
-    <tr>
-      <td><%= @clinic.doctors.count %></td>
-      <td><%= @clinic.id %></td>
-      <td><%= @clinic.name %></td>
-      <td><%= @clinic.open %></td>
-      <td><%= @clinic.computers %></td>
-      <td><%= @clinic.created_at %></td>
-      <td><%= @clinic.updated_at %></td>
-    </tr>
-  </table>
+
+<p>Doctors: <%= @clinic.doctors.count %></p>
+<p>id: <%= @clinic.id %></p>
+<p>Name: <%= @clinic.name %></p>
+<p>Open: <%= @clinic.open %></p>
+<p>Computers: <%= @clinic.computers %></p>
+<p>Created at: <%= @clinic.created_at %></p>
+<p>Updated at: <%= @clinic.updated_at %></p>

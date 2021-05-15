@@ -14,12 +14,30 @@ RSpec.describe "patients index page", type: :feature do
     hospital_2.patients.create!(name: 'Megan', visitors: true, age: 31)
     hospital_2.patients.create!(name: 'Luke', visitors: false, age: 78)
 
-
     visit "/patients"
-    save_and_open_page
     expect(page).to have_content("#{hospital.patients.first.name}")
     expect(page).to have_content("#{hospital.patients.second.name}")
     expect(page).to have_content("#{hospital_2.patients.first.name}")
     expect(page).to have_content("#{hospital_2.patients.second.name}")
+  end
+
+  it "Has links to child index" do
+    # User Story 8, Child Index Link
+    # As a visitor
+    # When I visit any page on the site
+    # Then I see a link at the top of the page that takes me to the Child Index
+    visit "/patients"
+    click_on "Patient Index"
+    expect(current_path).to eq("/patients")
+  end
+
+  it "Has links to Parent index" do
+    # User Story 9, Parent Index Link
+    # As a visitor
+    # When I visit any page on the site
+    # Then I see a link at the top of the page that takes me to the Parent Index
+    visit "/patients"
+    click_on "Hospital Index"
+    expect(current_path).to eq("/hospitals")
   end
 end
