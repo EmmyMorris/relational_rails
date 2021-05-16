@@ -15,7 +15,8 @@ class PatientsController < ApplicationController
     patient = Patient.find(params[:id])
     patient.update(
      name: params[:name],
-     age: params[:age])
+     age: params[:age],
+     visitors: params[:visitors])
     redirect_to '/patients'
   end
 end

@@ -18,16 +18,19 @@ RSpec.describe "parent creation" do
   end
 
   it 'can create a new hospital' do
+    hospital = Hospital.create!(name: 'Major Hospital')
     visit '/hospitals/new'
 
     fill_in('name', with: 'Ryker')
-    # fill_in('Max Capacity', with: true)
+    fill_in('max_capacity', with: 'true')
     fill_in('beds', with: '250')
     click_button('Create Hospital')
     # save_and_open_page
     new_hospital_id = Hospital.last.id
-    expect(current_path).to eq("/hospitals/#{new_hospital_id}")
+    expect(current_path).to eq("/hospitals")
     expect(page).to have_content("Ryker")
-    # expect(page).to have_content("true")
-  end
+
+    visit "/hospitals/#{new_hospital_id}"
+    expect(page).to have_content('true')
+   end
 end

@@ -30,10 +30,15 @@ RSpec.describe "the hospital edit" do
 
     click_button 'Edit Major Hospital'
 
-    fill_in 'Name', with: 'Major Grand Hospital'
+    fill_in('Name', with: 'Major Grand Hospital')
+    fill_in('max_capacity', with: 'true')
+    fill_in('beds', with: '250')
     click_button 'Update Hospital'
+    new_hospital_id = Hospital.last.id
 
     expect(current_path).to eq("/hospitals")
     expect(page).to have_content('Major Grand Hospital')
+    visit "/hospitals/#{new_hospital_id}"
+    expect(page).to have_content('true')
   end
 end

@@ -24,12 +24,13 @@ RSpec.describe "Child creation" do
 
     visit "/hospitals/#{hospital.id}/patients/new"
     fill_in('name', with: 'Carlos')
-    # fill_in('Visitors', with: true)
+    fill_in('Visitors', with: 'true')
     fill_in('age', with: '40')
     click_button('Create Patient')
     new_patient_id = Patient.last.id
     expect(current_path).to eq("/hospitals/#{hospital.id}/patients")
     expect(page).to have_content("Carlos")
-    # expect(page).to have_content("true")
+    expect(page).to have_content("40")
+    expect(page).to have_content("true")
   end
 end

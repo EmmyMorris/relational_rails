@@ -14,7 +14,8 @@ class HospitalsController < ApplicationController
   def create
     hospital = Hospital.create!(
       name: params[:name],
-      beds: params[:beds])
+      beds: params[:beds],
+      max_capacity: params[:max_capacity])
     redirect_to "/hospitals"
   end
 
@@ -26,7 +27,8 @@ class HospitalsController < ApplicationController
     hospital = Hospital.find(params[:id])
     hospital.update(
      name: params[:name],
-     beds: params[:beds])
+     beds: params[:beds],
+     max_capacity: params[:max_capacity])
     redirect_to '/hospitals'
   end
 end

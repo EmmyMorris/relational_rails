@@ -30,9 +30,35 @@ RSpec.describe "the patient edit" do
     click_button "Update Patient Randy"
 
     fill_in 'Name', with: 'Robert'
+    fill_in 'Age', with: '77'
+    fill_in 'Visitors', with: 'false'
+
     click_button 'Update Patient'
 
     expect(current_path).to eq("/patients")
     expect(page).to have_content('Robert')
+    expect(page).to have_content('77')
+    expect(page).to have_content('false')
   end
+
+  # it 'can edit the hospital' do
+  #   hospital = Hospital.create!(name: 'Major Hospital')
+  #
+  #   visit '/hospitals'
+  #
+  #   expect(page).to have_content('Major Hospital')
+  #
+  #   click_button 'Edit Major Hospital'
+  #
+  #   fill_in('Name', with: 'Major Grand Hospital')
+  #   fill_in('max_capacity', with: 'true')
+  #   fill_in('beds', with: '250')
+  #   click_button 'Update Hospital'
+  #   new_hospital_id = Hospital.last.id
+  #
+  #   expect(current_path).to eq("/hospitals")
+  #   expect(page).to have_content('Major Grand Hospital')
+  #   visit "/hospitals/#{new_hospital_id}"
+  #   expect(page).to have_content('true')
+  # end
 end
