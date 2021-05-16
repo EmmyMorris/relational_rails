@@ -1,6 +1,7 @@
 class HospitalsController < ApplicationController
   def index
-    @hospitals = Hospital.all.order("created_at DESC")
+    # @hospitals = Hospital.all.order("created_at DESC")
+    @hospitals = Hospital.order_by
   end
 
   def show
@@ -22,10 +23,10 @@ class HospitalsController < ApplicationController
   end
 
   def update
-  hospital = Hospital.find(params[:id])
-   hospital.update(
+    hospital = Hospital.find(params[:id])
+    hospital.update(
      name: params[:name],
      beds: params[:beds])
-   redirect_to '/hospitals'
+    redirect_to '/hospitals'
   end
 end

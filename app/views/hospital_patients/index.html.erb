@@ -5,6 +5,8 @@
 <%= link_to "Doctor Index", "/doctors" %>
 <h1>Patient's Attributes</h1>
 
+<%= link_to "Create Patient", "/hospitals/#{@hospital.id}/patients/new" %>
+
 <% @patients.each do |patient| %>
   <h3>Name: <%= patient.name %></h3>
   <p>id: <%= patient.id %></p>
