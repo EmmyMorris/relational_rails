@@ -1,0 +1,11 @@
+<%= form_with url: "/hospitals/#{@hospital.id}", method: :patch, local: true do |form| %>
+  <%= form.label :name %>
+  <%= form.text_field :name %>
+  <br>
+  <br>
+  <%= form.label :beds %>
+  <%= form.text_field :beds %>
+  <br>
+  <br>
+  <%= form.submit 'Update Hospital' %>
+<% end %>

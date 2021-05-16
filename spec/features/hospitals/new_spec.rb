@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe "partent creation" do
+RSpec.describe "parent creation" do
   it  'links to the new page from the hospital index' do
     # User Story 11, Parent Creation (x2)
     # As a visitor
