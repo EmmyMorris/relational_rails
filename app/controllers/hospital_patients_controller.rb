@@ -5,14 +5,12 @@ class HospitalPatientsController < ApplicationController
   end
 
   def new
+    @hospital = Hospital.find(params[:hospital_id])
   end
 
   def create
-    # hospital = Hospital.create!(
-    #   name: params[:name],
-    #   beds: params[:beds])
     hospital = Hospital.find(params[:hospital_id])
-    patient = @hospital.patients.create!(
+    patient = hospital.patients.create!(
       name: params[:name],
       age: params[:age])
     redirect_to "/hospitals/#{hospital.id}/patients"

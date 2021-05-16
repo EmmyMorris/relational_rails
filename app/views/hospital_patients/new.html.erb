@@ -1,4 +1,4 @@
-<%= form_with url: "/hospitals/:hospital_id/patients", method: :post, local: true do |form| %>
+<%= form_with url: "/hospitals/#{@hospital.id}/patients", method: :post, local: true do |form| %>
   <%= form.label :patient_name %>
   <%= form.text_field :name %>
   <br>

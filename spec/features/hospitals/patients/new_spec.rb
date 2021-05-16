@@ -27,7 +27,6 @@ RSpec.describe "Child creation" do
     # fill_in('Visitors', with: true)
     fill_in('age', with: '40')
     click_button('Create Patient')
-    # save_and_open_page
     new_patient_id = Patient.last.id
     expect(current_path).to eq("/hospitals/#{hospital.id}/patients")
     expect(page).to have_content("Carlos")
