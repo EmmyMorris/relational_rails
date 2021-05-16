@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  # get '/', to: 'welcome#index'
+  get '/', to: 'welcome#index'
   get '/hospitals', to: 'hospitals#index'
+  get '/hospitals/new', to: 'hospitals#new'
+  post '/hospitals', to: 'hospitals#create'
   get '/hospitals/:id', to: 'hospitals#show'
   get '/hospitals/:hospital_id/patients', to: 'hospital_patients#index'
+
 
   get '/patients', to: 'patients#index'
   get '/patients/:id', to: 'patients#show'

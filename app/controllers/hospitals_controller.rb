@@ -6,4 +6,14 @@ class HospitalsController < ApplicationController
   def show
     @hospital = Hospital.find(params[:id])
   end
+
+  def new
+  end
+
+  def create
+    hospital = Hospital.create!(
+      name: params[:name],
+      beds: params[:beds])
+    redirect_to "/hospitals"
+  end
 end
