@@ -14,4 +14,5 @@
   <p>Hospital id: <%= patient.hospital_id %></p>
   <p>Updated at: <%= patient.updated_at %></p>
   <p>Created at: <%= patient.created_at %></p>
+  <%= button_to "Update Patient #{patient.name}", "/patients/#{patient.id}/edit", method: :get %>
 <% end %>

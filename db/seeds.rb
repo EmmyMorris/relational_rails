@@ -9,9 +9,9 @@ hospital = Hospital.create!(name: 'St. Lukes', max_capacity: false, beds: 300)
 hospital_2 = Hospital.create!(name: 'Sky Ridge', max_capacity: true, beds: 200)
 hospital_3 = Hospital.create!(name: 'Denver Health', max_capacity: false, beds: 600)
 
-hospital.patients.create!(name: 'Mike', visitors: true, age: 37)
+hospital.patients.create!(name: 'Caleb', visitors: true, age: 30)
 hospital_2.patients.create!(name: 'Megan', visitors: true, age: 31)
-hospital_3.patients.create!(name: 'Bob', visitors: false, age: 29)
+hospital_3.patients.create!(name: 'Bob', visitors: false, age: 35)
 
 clinic = Clinic.create!(name: 'First Priority', open: false, computers: 80)
 clinic_2 = Clinic.create!(name: 'Medical Plus', open: true, computers: 100)
