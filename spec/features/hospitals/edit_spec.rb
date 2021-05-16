@@ -20,8 +20,8 @@ RSpec.describe "the hospital edit" do
 
    expect(current_path).to eq("/hospitals/#{hospital.id}/edit")
   end
-  
-  it 'can edit the artist' do
+
+  it 'can edit the hospital' do
     hospital = Hospital.create!(name: 'Major Hospital')
 
     visit '/hospitals'
