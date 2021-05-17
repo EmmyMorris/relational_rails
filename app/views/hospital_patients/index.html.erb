@@ -12,4 +12,5 @@
   <p>id: <%= patient.id %></p>
   <p>Visitors: <%= patient.visitors %></p>
   <p>Age: <%= patient.age %></p>
+  <%= button_to "Edit Patient #{patient.name}", "/hospitals/#{@hospital.id}/patients/#{patient.id}/edit", method: :get %>
 <% end %>

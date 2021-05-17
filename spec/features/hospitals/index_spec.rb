@@ -66,7 +66,6 @@ RSpec.describe "hospitals index page", type: :feature do
 
     it "has edit link next to hospital" do
       # User Story 17, Parent Update From Parent Index Page (x2)
-      #
       # As a visitor
       # When I visit the parent index page
       # Next to every parent, I see a link to edit that parent's info

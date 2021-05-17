@@ -62,4 +62,19 @@ RSpec.describe "patients index page", type: :feature do
     expect(page).not_to have_content('Tyler')
     expect(page).not_to have_content('false')
   end
+
+  it "has edit link next to patients" do
+    # User Story 18, Child Update From Childs Index Page (x1)
+    # As a visitor
+    # When I visit the `child_table_name` index page or a parent `child_table_name` index page
+    # Next to every child, I see a link to edit that child's info
+    # When I click the link
+    # I should be taken to that `child_table_name` edit page where I can update its information just like in User Story 11
+    hospital = Hospital.create!(name: 'St. Johns', max_capacity: false, beds: 300)
+    patient_1 = hospital.patients.create!(name: 'Miko', visitors: true, age: 37)
+
+    visit "/patients"
+    click_on "Update Patient #{patient_1.name}"
+    expect(current_path).to eq("/patients/#{patient_1.id}/edit")
+  end
 end

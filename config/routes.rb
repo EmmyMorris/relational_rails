@@ -5,12 +5,17 @@ Rails.application.routes.draw do
   get '/hospitals', to: 'hospitals#index'
   get '/hospitals/new', to: 'hospitals#new'
   post '/hospitals', to: 'hospitals#create'
+
+  get '/hospitals/:hospital_id/patients', to: 'hospital_patients#index'
   get '/hospitals/:hospital_id/patients/new', to: 'hospital_patients#new'
   post '/hospitals/:hospital_id/patients', to: 'hospital_patients#create'
+  get '/hospitals/:hospital_id/patients/:id/edit', to: 'hospital_patients#edit'
+  patch '/hospitals/:hospital_id/patients/:id', to: 'hospital_patients#update'
+
+
   get '/hospitals/:id/edit', to: 'hospitals#edit'
   patch '/hospitals/:id', to: 'hospitals#update'
   get '/hospitals/:id', to: 'hospitals#show'
-  get '/hospitals/:hospital_id/patients', to: 'hospital_patients#index'
 
 
   get '/patients', to: 'patients#index'
