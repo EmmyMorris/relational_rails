@@ -40,4 +40,24 @@ RSpec.describe "patients index page", type: :feature do
     click_on "Hospital Index"
     expect(current_path).to eq("/hospitals")
   end
+
+  it "Has only true visitors" do
+    # User Story 15, Child Index only shows `true` Records (x2)
+    #
+    # As a visitor
+    # When I visit the child index
+    # Then I only see records where the boolean column is `true`
+    hospital = Hospital.create!(name: 'St. Lukes', max_capacity: false, beds: 300)
+    hospital.patients.create!(name: 'Miko', visitors: true, age: 37)
+    hospital.patients.create!(name: 'Tyler', visitors: false, age: 20)
+
+    hospital_2 = Hospital.create!(name: 'Crest Health', max_capacity: false, beds: 300)
+    hospital_2.patients.create!(name: 'Megan', visitors: true, age: 31)
+    hospital_2.patients.create!(name: 'Luke', visitors: false, age: 78)
+    visit "/patients"
+    save_and_open_page
+    expect(page).to have_content('Miko')
+    expect(page).to have_content('Megan')
+    expect(page).to have_content('true')
+  end
 end
