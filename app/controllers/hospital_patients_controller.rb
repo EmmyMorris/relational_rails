@@ -1,7 +1,7 @@
 class HospitalPatientsController < ApplicationController
   def index
     @hospital = Hospital.find(params[:hospital_id])
-    @patients = @hospital.patients
+    @patients = @hospital.patients.order_alphabetically
   end
 
   def new
@@ -14,6 +14,21 @@ class HospitalPatientsController < ApplicationController
       name: params[:name],
       age: params[:age],
       visitors: params[:visitors])
+    redirect_to "/hospitals/#{hospital.id}/patients"
+  end
+
+  def edit
+    @hospital = Hospital.find(params[:hospital_id])
+    @patient = @hospital.patients.find(params[:id])
+  end
+
+  def update
+    hospital = Hospital.find(params[:hospital_id])
+    patient = hospital.patients.find(params[:id])
+    patient.update(
+     name: params[:name],
+     age: params[:age],
+     visitors: params[:visitors])
     redirect_to "/hospitals/#{hospital.id}/patients"
   end
 end

@@ -1,6 +1,6 @@
 class PatientsController < ApplicationController
   def index
-    @patients = Patient.all
+    @patients = Patient.has_visitors
   end
 
   def show
@@ -17,6 +17,6 @@ class PatientsController < ApplicationController
      name: params[:name],
      age: params[:age],
      visitors: params[:visitors])
-    redirect_to '/patients'
+    redirect_to "/patients"
   end
 end
