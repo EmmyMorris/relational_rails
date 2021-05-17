@@ -16,9 +16,9 @@ RSpec.describe "patients index page", type: :feature do
 
     visit "/patients"
     expect(page).to have_content("#{hospital.patients.first.name}")
-    expect(page).to have_content("#{hospital.patients.second.name}")
+    expect(page).not_to have_content("#{hospital.patients.second.name}")
     expect(page).to have_content("#{hospital_2.patients.first.name}")
-    expect(page).to have_content("#{hospital_2.patients.second.name}")
+    expect(page).not_to have_content("#{hospital_2.patients.second.name}")
   end
 
   it "Has links to child index" do
@@ -55,9 +55,11 @@ RSpec.describe "patients index page", type: :feature do
     hospital_2.patients.create!(name: 'Megan', visitors: true, age: 31)
     hospital_2.patients.create!(name: 'Luke', visitors: false, age: 78)
     visit "/patients"
-    save_and_open_page
     expect(page).to have_content('Miko')
     expect(page).to have_content('Megan')
     expect(page).to have_content('true')
+    expect(page).not_to have_content('Luke')
+    expect(page).not_to have_content('Tyler')
+    expect(page).not_to have_content('false')
   end
 end

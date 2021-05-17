@@ -1,6 +1,6 @@
 class PatientsController < ApplicationController
   def index
-    @patients = Patient.all.visitors
+    @patients = Patient.has_visitors
   end
 
   def show

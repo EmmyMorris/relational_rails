@@ -1,7 +1,6 @@
 class HospitalsController < ApplicationController
   def index
-    # @hospitals = Hospital.all.order("created_at DESC")
-    @hospitals = Hospital.order_by
+    @hospitals = Hospital.order_by_created_at
   end
 
   def show
