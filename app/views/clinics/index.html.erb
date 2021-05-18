@@ -5,6 +5,9 @@
 <%= link_to "Doctor Index", "/doctors" %>
 <h1>All Clinics</h1>
 
+<%= link_to "New Clinic", "/clinics/new" %>
+
 <% @clinics.each do |clinic| %>
   <h3><%= clinic.name%>: <%= clinic.created_at %> </h3>
+  <%= button_to "Edit #{clinic.name}", "/clinics/#{clinic.id}/edit", method: :get %>
 <% end %>

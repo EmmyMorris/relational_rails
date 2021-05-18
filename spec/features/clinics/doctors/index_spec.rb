@@ -34,8 +34,26 @@ RSpec.describe 'Clinics doctors index' do
     # Then I see a link at the top of the page that takes me to the Parent Index
     clinic = Clinic.create!(name: 'First Priority', open: false, computers: 80)
     visit "/clinics/#{clinic.id}/doctors"
-    
+
     click_on "Clinic Index"
     expect(current_path).to eq("/clinics")
+  end
+
+  it "Orders doctors alphabetically" do
+    # User Story 16, Sort Parent's Children in Alphabetical Order by name (x2)
+    # As a visitor
+    # When I visit the Parent's children Index Page
+    # Then I see a link to sort children in alphabetical order
+    # When I click on the link
+    # I'm taken back to the Parent's children Index Page where I see all of the parent's children in alphabetical order
+    clinic = Clinic.create!(name: 'First Priority', open: false, computers: 80)
+    doctor_1 = clinic.doctors.create!(name: 'Brian', available: true, rating: 3.5)
+    doctor_2 = clinic.doctors.create!(name: 'Larry', available: true, rating: 2.5)
+
+
+    visit "/clinics/#{clinic.id}/doctors"
+    expect(page).to have_content(doctor_1.name)
+    expect(page).to have_content(doctor_2.name)
+    expect(doctor_1.name).to appear_before(doctor_2.name)
   end
 end

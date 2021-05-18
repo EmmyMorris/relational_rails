@@ -54,6 +54,7 @@ RSpec.describe "patients index page", type: :feature do
     hospital_2 = Hospital.create!(name: 'Crest Health', max_capacity: false, beds: 300)
     hospital_2.patients.create!(name: 'Megan', visitors: true, age: 31)
     hospital_2.patients.create!(name: 'Luke', visitors: false, age: 78)
+
     visit "/patients"
     expect(page).to have_content('Miko')
     expect(page).to have_content('Megan')

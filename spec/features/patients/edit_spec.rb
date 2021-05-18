@@ -14,9 +14,9 @@ RSpec.describe "the patient edit" do
     hospital = Hospital.create!(name: 'Major Hospital')
     patient = hospital.patients.create!(name: 'Randy', age: '50', visitors: 'true')
 
-     visit '/patients'
-     click_button "Update Patient #{patient.name}"
-     expect(current_path).to eq("/patients/#{patient.id}/edit")
+    visit '/patients'
+    click_button "Update Patient #{patient.name}"
+    expect(current_path).to eq("/patients/#{patient.id}/edit")
   end
 
   it 'can edit the patient' do

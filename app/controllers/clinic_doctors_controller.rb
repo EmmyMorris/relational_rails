@@ -1,6 +1,34 @@
 class ClinicDoctorsController < ApplicationController
   def index
+    @clinic = Clinic.find(params[:clinic_id])
+    @doctors = @clinic.doctors.order_alphabetically
+  end
+
+  def new
+    @clinic = Clinic.find(params[:clinic_id])
+  end
+
+  def create
     clinic = Clinic.find(params[:clinic_id])
-    @doctors = clinic.doctors
+    doctor = clinic.doctors.create!(
+      name: params[:name],
+      rating: params[:rating],
+      available: params[:available])
+    redirect_to "/clinics/#{clinic.id}/doctors"
+  end
+
+  def edit
+    @clinic = Clinic.find(params[:clinic_id])
+    @doctor = @clinic.doctors.find(params[:id])
+  end
+
+  def update
+    clinic = Clinic.find(params[:clinic_id])
+    doctor = clinic.doctors.find(params[:id])
+    doctor.update(
+     name: params[:name],
+     rating: params[:rating],
+     available: params[:available])
+    redirect_to "/clinics/#{clinic.id}/doctors"
   end
 end
