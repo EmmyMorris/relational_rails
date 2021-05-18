@@ -28,6 +28,6 @@ class ClinicsController < ApplicationController
      name: params[:name],
      computers: params[:computers],
      open: params[:open])
-    redirect_to '/clinics'
+    redirect_to "/clinics/#{clinic.id}"
   end
 end

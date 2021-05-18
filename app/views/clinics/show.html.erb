@@ -14,3 +14,5 @@
 <p>Computers: <%= @clinic.computers %></p>
 <p>Created at: <%= @clinic.created_at %></p>
 <p>Updated at: <%= @clinic.updated_at %></p>
+
+<%= link_to "Update #{@clinic.name}", "/clinics/#{@clinic.id}/edit" %>

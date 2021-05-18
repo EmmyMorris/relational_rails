@@ -28,6 +28,6 @@ class HospitalsController < ApplicationController
      name: params[:name],
      beds: params[:beds],
      max_capacity: params[:max_capacity])
-    redirect_to '/hospitals'
+    redirect_to "/hospitals/#{hospital.id}"
   end
 end
