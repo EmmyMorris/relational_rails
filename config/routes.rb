@@ -26,11 +26,12 @@ Rails.application.routes.draw do
 
   get '/clinics', to: 'clinics#index'
   get '/clinics/new', to: 'clinics#new'
+  delete '/clinics/:id', to: 'clinics#destroy'
   get '/clinics/:id/edit', to: 'clinics#edit'
   patch '/clinics/:id', to: 'clinics#update'
   get '/clinics/:id', to: 'clinics#show'
   post '/clinics', to: 'clinics#create'
-  delete '/clinics/:id', to: 'clinics#destroy'
+
 
   get '/doctors', to: 'doctors#index'
   get '/doctors/:id', to: 'doctors#show'

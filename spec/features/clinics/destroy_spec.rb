@@ -15,8 +15,8 @@ RSpec.describe "clinic show page", type: :feature do
 
     visit "/clinics/#{clinic_1.id}"
     click_on "Delete Clinic #{clinic_1.name}"
-
-    expect(current_path).to eq ("/clinics/#{clinic_1.id}")
+  
+    expect(current_path).to eq ("/clinics")
     expect(page).not_to have_content('First Priority')
   end
 end
