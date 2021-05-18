@@ -40,4 +40,6 @@ Rails.application.routes.draw do
   get '/clinics/:clinic_id/doctors', to: 'clinic_doctors#index'
   get '/clinics/:clinic_id/doctors/new', to: 'clinic_doctors#new'
   post '/clinics/:clinic_id/doctors', to: 'clinic_doctors#create'
+  get '/clinics/:clinic_id/doctors/:id/edit', to: 'clinic_doctors#edit'
+  patch '/clinics/:clinic_id/doctors/:id', to: 'clinic_doctors#update'
 end

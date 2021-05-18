@@ -16,4 +16,19 @@ class ClinicDoctorsController < ApplicationController
       available: params[:available])
     redirect_to "/clinics/#{clinic.id}/doctors"
   end
+
+  def edit
+    @clinic = Clinic.find(params[:clinic_id])
+    @doctor = @clinic.doctors.find(params[:id])
+  end
+
+  def update
+    clinic = Clinic.find(params[:clinic_id])
+    doctor = clinic.doctors.find(params[:id])
+    doctor.update(
+     name: params[:name],
+     rating: params[:rating],
+     available: params[:available])
+    redirect_to "/clinics/#{clinic.id}/doctors"
+  end
 end
