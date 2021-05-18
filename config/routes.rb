@@ -30,7 +30,7 @@ Rails.application.routes.draw do
   patch '/clinics/:id', to: 'clinics#update'
   get '/clinics/:id', to: 'clinics#show'
   post '/clinics', to: 'clinics#create'
-
+  delete '/clinics/:id', to: 'clinics#destroy'
 
   get '/doctors', to: 'doctors#index'
   get '/doctors/:id', to: 'doctors#show'
