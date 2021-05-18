@@ -31,7 +31,9 @@ class HospitalsController < ApplicationController
     redirect_to "/hospitals/#{hospital.id}"
   end
 
-  def destory
-
+  def destroy
+    @hospital = Hospital.find(params[:id])
+    @hospital.destroy
+    redirect_to "/hospitals"
   end
 end

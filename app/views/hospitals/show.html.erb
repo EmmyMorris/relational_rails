@@ -17,4 +17,4 @@
 
 <%= link_to "Update #{@hospital.name}", "/hospitals/#{@hospital.id}/edit" %>
 <br>
-<%= link_to "Delete Hospital #{@hospital.name}", "/hospitals/#{@hospital.id}" %>
+<%= link_to "Delete Hospital #{@hospital.name}", "/hospitals/#{@hospital.id}", method: :delete %>

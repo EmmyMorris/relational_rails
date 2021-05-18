@@ -12,11 +12,10 @@ Rails.application.routes.draw do
   get '/hospitals/:hospital_id/patients/:id/edit', to: 'hospital_patients#edit'
   patch '/hospitals/:hospital_id/patients/:id', to: 'hospital_patients#update'
 
-
+  delete '/hospitals/:id', to: 'hospitals#destroy'
   get '/hospitals/:id/edit', to: 'hospitals#edit'
   patch '/hospitals/:id', to: 'hospitals#update'
   get '/hospitals/:id', to: 'hospitals#show'
-  delete '/hospitals/:id', to: 'hospitals#destroy'
 
 
   get '/patients', to: 'patients#index'

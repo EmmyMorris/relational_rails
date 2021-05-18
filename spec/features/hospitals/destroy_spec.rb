@@ -14,7 +14,7 @@ RSpec.describe "Destroy a hospital", type: :feature do
       hospital_1 = Hospital.create!(name: 'St. Johns', max_capacity: false, beds: 300)
       visit "/hospitals/#{hospital_1.id}"
       click_link "Delete Hospital #{hospital_1.name}"
-      expect(current_path).to eq("/hospitals/#{hospital_1.id}")
+      expect(current_path).to eq("/hospitals")
       expect(page).not_to have_content("St. Johns")
     end
   end
