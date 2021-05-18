@@ -1,6 +1,6 @@
 class DoctorsController < ApplicationController
   def index
-    @doctors = Doctor.all
+    @doctors = Doctor.is_available
   end
 
   def show
