@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get '/hospitals/:id/edit', to: 'hospitals#edit'
   patch '/hospitals/:id', to: 'hospitals#update'
   get '/hospitals/:id', to: 'hospitals#show'
+  delete '/hospitals/:id', to: 'hospitals#destroy'
 
 
   get '/patients', to: 'patients#index'
