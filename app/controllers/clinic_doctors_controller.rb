@@ -1,7 +1,7 @@
 class ClinicDoctorsController < ApplicationController
   def index
     @clinic = Clinic.find(params[:clinic_id])
-    @doctors = @clinic.doctors
+    @doctors = @clinic.doctors.order_alphabetically
   end
 
   def new

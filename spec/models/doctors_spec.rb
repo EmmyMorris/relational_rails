@@ -12,5 +12,13 @@ RSpec.describe Doctor, type: :model do
       doctor_2 = clinic.doctors.create!(name: 'George', available: false, rating: 3.0)
       expect(Doctor.is_available).to eq([doctor_1])
     end
+
+    it 'orders doctors alphabetically' do
+      clinic = Clinic.create!(name: 'First Priority', open: false, computers: 80)
+      doctor_1 = clinic.doctors.create!(name: 'Brian', available: true, rating: 3.5)
+      doctor_2 = clinic.doctors.create!(name: 'George', available: false, rating: 3.0)
+
+      expect(Doctor.order_alphabetically).to eq([doctor_1, doctor_2])
+    end
   end
 end
