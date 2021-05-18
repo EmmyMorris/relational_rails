@@ -1,7 +1,11 @@
 class HospitalPatientsController < ApplicationController
   def index
     @hospital = Hospital.find(params[:hospital_id])
-    @patients = @hospital.patients.order_alphabetically
+    if params[:order_alphabetically] == "true"
+      @patients = @hospital.patients.order_alphabetically
+    else
+      @patients = @hospital.patients
+    end
   end
 
   def new
