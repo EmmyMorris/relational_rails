@@ -45,13 +45,16 @@ RSpec.describe "hospital patient index page", type: :feature do
     # When I click on the link
     # I'm taken back to the Parent's children Index Page where I see all of the parent's children in alphabetical order
     hospital = Hospital.create!(name: 'St. Lukes', max_capacity: false, beds: 300)
-    miko = hospital.patients.create!(name: 'Miko', visitors: true, age: 37)
     tyler = hospital.patients.create!(name: 'Tyler', visitors: false, age: 20)
+    miko = hospital.patients.create!(name: 'Miko', visitors: true, age: 37)
 
 
     visit "/hospitals/#{hospital.id}/patients"
     expect(page).to have_content(miko.name)
     expect(page).to have_content(tyler.name)
+    expect(tyler.name).to appear_before(miko.name)
+
+    click_on "Sort Alphabetically"
     expect(miko.name).to appear_before(tyler.name)
   end
 
