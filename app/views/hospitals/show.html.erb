@@ -14,3 +14,5 @@
 <p>Beds: <%= @hospital.beds %></p>
 <p>Created at: <%= @hospital.created_at %></p>
 <p>Updated at: <%= @hospital.updated_at %></p>
+
+<%= link_to "Update #{@hospital.name}", "/hospitals/#{@hospital.id}/edit" %>
