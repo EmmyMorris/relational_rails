@@ -6,4 +6,15 @@ class ClinicsController < ApplicationController
   def show
     @clinic = Clinic.find(params[:id])
   end
+
+  def new
+  end
+
+  def create
+    clinic = Clinic.create!(
+      name: params[:name],
+      computers: params[:computers],
+      open: params[:open])
+    redirect_to "/clinics"
+  end
 end
