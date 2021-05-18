@@ -19,4 +19,10 @@ class DoctorsController < ApplicationController
      available: params[:available])
     redirect_to "/doctors/#{doctor.id}"
   end
+
+  def destroy
+    @doctor = Doctor.find(params[:id])
+    @doctor.destroy
+    redirect_to '/doctors'
+  end
 end
