@@ -5,6 +5,12 @@ RSpec.describe Hospital, type: :model do
     it {should have_many :patients}
   end
 
+  describe 'dependent destroy' do
+    hospital = Hospital.create!(name: 'St. Lukes', max_capacity: false, beds: 300)
+    hospital.destroy
+    it { expect(hospital).to have_many(:patients).dependent(:delete_all) }
+  end
+
   describe "class method test" do
     it 'orders hospitals by created at' do
       hospital = Hospital.create!(name: 'St. Lukes', max_capacity: false, beds: 300)

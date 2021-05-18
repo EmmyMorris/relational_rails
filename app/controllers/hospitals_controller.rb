@@ -30,4 +30,10 @@ class HospitalsController < ApplicationController
      max_capacity: params[:max_capacity])
     redirect_to "/hospitals/#{hospital.id}"
   end
+
+  def destroy
+    @hospital = Hospital.find(params[:id])
+    @hospital.destroy
+    redirect_to "/hospitals"
+  end
 end
