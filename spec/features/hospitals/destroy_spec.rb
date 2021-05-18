@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "Destroy a hospital", type: :feature do
   describe 'index feature tests' do
-    it "can see link to delete hosptal" do
+    it "can delete a hosptal" do
       # User Story 19, Parent Delete (x2)
       # As a visitor
       # When I visit a parent show page

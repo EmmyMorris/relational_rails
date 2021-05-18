@@ -15,3 +15,5 @@
 <p>Updated at: <%= @patient.updated_at %></p>
 
 <%= link_to "Update Patient #{@patient.name}", "/patients/#{@patient.id}/edit" %>
+<br>
+<%= link_to "Delete Patient #{@patient.name}", "/patients/#{@patient.id}", method: :delete %>
