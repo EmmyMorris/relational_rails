@@ -14,11 +14,11 @@ RSpec.describe "the hospital edit" do
   # and I am redirected to the Parent's Show page where I see the parent's updated info
   hospital = Hospital.create!(name: 'Georgetown Hospital')
 
-   visit '/hospitals'
+  visit '/hospitals'
 
-   click_button "Edit #{hospital.name}"
+  click_button "Edit #{hospital.name}"
 
-   expect(current_path).to eq("/hospitals/#{hospital.id}/edit")
+  expect(current_path).to eq("/hospitals/#{hospital.id}/edit")
   end
 
   it 'can edit the hospital' do

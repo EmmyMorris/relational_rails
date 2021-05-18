@@ -17,4 +17,17 @@ class ClinicsController < ApplicationController
       open: params[:open])
     redirect_to "/clinics"
   end
+
+  def edit
+    @clinic = Clinic.find(params[:id])
+  end
+
+  def update
+    clinic = Clinic.find(params[:id])
+    clinic.update(
+     name: params[:name],
+     computers: params[:computers],
+     open: params[:open])
+    redirect_to '/clinics'
+  end
 end
