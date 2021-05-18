@@ -30,4 +30,10 @@ class ClinicsController < ApplicationController
      open: params[:open])
     redirect_to "/clinics/#{clinic.id}"
   end
+
+  def destroy
+    @clinic = Clinic.find(params[:id])
+    @clinic.destroy
+    redirect_to "/clinics"
+  end
 end
