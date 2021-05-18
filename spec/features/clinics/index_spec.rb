@@ -50,4 +50,18 @@ RSpec.describe "clinics index page", type: :feature do
     click_on "Clinic Index"
     expect(current_path).to eq("/clinics")
   end
+
+  it "has edit link next to clinic" do
+    # User Story 17, Parent Update From Parent Index Page (x2)
+    # As a visitor
+    # When I visit the parent index page
+    # Next to every parent, I see a link to edit that parent's info
+    # When I click the link
+    # I should be taken to that parents edit page where I can update its information just like in User Story 4
+    clinic = Clinic.create!(name: 'First Priority', open: false, computers: 80)
+
+    visit "/clinics"
+    click_on "Edit #{clinic.name}"
+    expect(current_path).to eq("/clinics/#{clinic.id}/edit")
+  end
 end
