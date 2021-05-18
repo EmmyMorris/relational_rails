@@ -17,6 +17,6 @@ class PatientsController < ApplicationController
      name: params[:name],
      age: params[:age],
      visitors: params[:visitors])
-    redirect_to "/patients"
+    redirect_to "/patients/#{patient.id}"
   end
 end

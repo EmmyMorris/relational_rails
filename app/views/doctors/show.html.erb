@@ -13,3 +13,4 @@
 <p>Clinic id: <%= @doctor.clinic_id %></p>
 <p>Created at: <%= @doctor.created_at %></p>
 <p>Updated at: <%= @doctor.updated_at %></p>
+<%= link_to "Update Doctor #{@doctor.name}", "/doctors/#{@doctor.id}/edit" %>

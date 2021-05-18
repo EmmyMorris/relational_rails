@@ -17,6 +17,6 @@ class DoctorsController < ApplicationController
      name: params[:name],
      rating: params[:rating],
      available: params[:available])
-    redirect_to "/doctors"
+    redirect_to "/doctors/#{doctor.id}"
   end
 end
