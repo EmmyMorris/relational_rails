@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/hospitals/:hospital_id/patients', to: 'hospital_patients#index'
   get '/hospitals/:hospital_id/patients/new', to: 'hospital_patients#new'
   post '/hospitals/:hospital_id/patients', to: 'hospital_patients#create'
+  delete '/hospitals/:hospital_id/patients/:id', to: 'hospital_patients#destroy'
   get '/hospitals/:hospital_id/patients/:id/edit', to: 'hospital_patients#edit'
   patch '/hospitals/:hospital_id/patients/:id', to: 'hospital_patients#update'
 

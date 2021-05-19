@@ -11,8 +11,10 @@
 
 <% @patients.each do |patient| %>
   <h3>Name: <%= patient.name %></h3>
-  <p>id: <%= patient.id %></p>
+  <p>id: <%= patient.id %></p
   <p>Visitors: <%= patient.visitors %></p>
   <p>Age: <%= patient.age %></p>
   <%= button_to "Edit Patient #{patient.name}", "/hospitals/#{@hospital.id}/patients/#{patient.id}/edit", method: :get %>
+  <br>
+  <%= link_to "Delete Patient #{patient.name}", "/hospitals/#{@hospital.id}/patients/#{patient.id}", method: :delete %>
 <% end %>
