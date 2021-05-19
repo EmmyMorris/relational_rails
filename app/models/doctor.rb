@@ -8,4 +8,8 @@ class Doctor < ApplicationRecord
   def self.order_alphabetically
     self.all.order(:name)
   end
+
+  def self.filter_by_rating(number)
+    where('rating > ?', number)
+  end
 end

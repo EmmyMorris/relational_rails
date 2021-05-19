@@ -1,10 +1,16 @@
-<!-- <a href="/hospitals">Hospital Index</a> <a href="/patients">Patient Index</a> <a href="/clinics">Clinic Index</a> <a href="/doctors">Doctor Index</a> -->
 <%= link_to "Hospital Index", "/hospitals" %>
 <%= link_to "Patient Index", "/patients" %>
 <%= link_to "Clinic Index", "/clinics" %>
 <%= link_to "Doctor Index", "/doctors" %>
 <h1>Doctor's Attributes</h1>
 
+<%= form_with url: "/clinics/#{@clinic.id}/doctors", method: :get, local: true do |form| %>
+  <%= form.label :filter_by_rating %>
+  <%= form.text_field :filter_by_rating %>
+  <%= form.submit "Filter Doctors by Rating" %>
+<% end %>
+<br>
+<br>
 <%= link_to "Sort Alphabetically", "/clinics/#{@clinic.id}/doctors?order_alphabetically=true" %>
 <br>
 <%= link_to "Create Doctor", "/clinics/#{@clinic.id}/doctors/new" %>
