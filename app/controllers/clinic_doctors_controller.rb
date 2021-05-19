@@ -35,4 +35,11 @@ class ClinicDoctorsController < ApplicationController
      available: params[:available])
     redirect_to "/clinics/#{clinic.id}/doctors"
   end
+
+  def destroy
+    clinic = Clinic.find(params[:clinic_id])
+    doctor = clinic.doctors.find(params[:id])
+    doctor.destroy
+    redirect_to "/clinics/#{clinic.id}/doctors"
+  end
 end
