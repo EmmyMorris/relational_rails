@@ -20,5 +20,13 @@ RSpec.describe Patient, type: :model do
 
       expect(Patient.order_alphabetically).to eq([patient_1, patient_2])
     end
+
+    it 'filters patients by age' do
+      hospital = Hospital.create!(name: 'St. Lukes', max_capacity: false, beds: 300)
+      patient_1 = hospital.patients.create!(name: 'Miley', visitors: true, age: 37)
+      patient_2 = hospital.patients.create!(name: 'Tyler', visitors: false, age: 20)
+
+      expect(Patient.filter_by_age(20)).to eq([patient_1])
+    end
   end
 end
