@@ -73,7 +73,7 @@ RSpec.describe "hospitals show page", type: :feature do
     hospital_1 = Hospital.create!(id: 1, name: 'St. Lukes', max_capacity: false, beds: 300)
 
     visit "/hospitals/#{hospital_1.id}"
-    click_on "Hospital-Patient Index"
+    click_on "Patients at #{hospital_1.name}"
     expect(current_path).to eq("/hospitals/#{hospital_1.id}/patients")
     end
 

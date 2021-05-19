@@ -1,8 +1,10 @@
+<div class="header">
 <%= link_to "Hospital Index", "/hospitals" %>
 <%= link_to "Patient Index", "/patients" %>
 <%= link_to "Clinic Index", "/clinics" %>
 <%= link_to "Doctor Index", "/doctors" %>
-<h1>Patient's Attributes</h1>
+<h1>Patients at <%= @hospital.name  %></h1>
+</div>
 
 <%= form_with url: "/hospitals/#{@hospital.id}/patients", method: :get, local: true do |form| %>
   <%= form.label :filter_by_age %>
@@ -23,4 +25,7 @@
   <%= button_to "Edit Patient #{patient.name}", "/hospitals/#{@hospital.id}/patients/#{patient.id}/edit", method: :get %>
   <br>
   <%= link_to "Delete Patient #{patient.name}", "/hospitals/#{@hospital.id}/patients/#{patient.id}", method: :delete %>
+  <br>
+  <br>
+  <hr>
 <% end %>
