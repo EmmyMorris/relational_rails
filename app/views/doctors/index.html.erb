@@ -15,4 +15,6 @@
   <p>Updated at: <%= doctor.updated_at %></p>
   <p>Created at: <%= doctor.created_at %></p>
   <%= button_to "Update Doctor #{doctor.name}", "/doctors/#{doctor.id}/edit", method: :get %>
+  <br>
+  <%= link_to "Delete Doctor #{doctor.name}", "/doctors/#{doctor.id}", method: :delete %>
 <% end %>

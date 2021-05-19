@@ -15,4 +15,6 @@
   <p>Available: <%= doctor.available %></p>
   <p>Rating: <%= doctor.rating %></p>
   <%= button_to "Edit Doctor #{doctor.name}", "/clinics/#{@clinic.id}/doctors/#{doctor.id}/edit", method: :get %>
+  <br>
+  <%= link_to "Delete Doctor #{doctor.name}", "/clinics/#{@clinic.id}/doctors/#{doctor.id}", method: :delete %>
 <% end %>

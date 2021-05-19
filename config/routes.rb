@@ -26,6 +26,7 @@ Rails.application.routes.draw do
 
 
   get '/clinics', to: 'clinics#index'
+  delete '/clinics', to: 'clinics#destroy'
   get '/clinics/new', to: 'clinics#new'
   delete '/clinics/:id', to: 'clinics#destroy'
   get '/clinics/:id/edit', to: 'clinics#edit'
@@ -41,6 +42,7 @@ Rails.application.routes.draw do
   patch '/doctors/:id', to: 'doctors#update'
 
   get '/clinics/:clinic_id/doctors', to: 'clinic_doctors#index'
+  delete '/clinics/:clinic_id/doctors/:id', to: 'clinic_doctors#destroy'
   get '/clinics/:clinic_id/doctors/new', to: 'clinic_doctors#new'
   post '/clinics/:clinic_id/doctors', to: 'clinic_doctors#create'
   get '/clinics/:clinic_id/doctors/:id/edit', to: 'clinic_doctors#edit'
