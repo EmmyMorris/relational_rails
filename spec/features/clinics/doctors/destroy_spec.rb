@@ -14,7 +14,7 @@ RSpec.describe 'Clinics doctors destroy' do
 
     visit "/clinics/#{clinic.id}/doctors"
     click_on "Delete Doctor #{doctor.name}"
-    binding.pry
+    
     expect(current_path).to eq ("/clinics/#{clinic.id}/doctors")
     expect(page).not_to have_content('Brian')
   end

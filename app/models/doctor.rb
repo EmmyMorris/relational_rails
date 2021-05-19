@@ -9,11 +9,7 @@ class Doctor < ApplicationRecord
     self.all.order(:name)
   end
 
-  def self.sort_by_rating(number)
-    if number
-      self.where(:rating > number)
-    else
-      self.all
-    end
+  def self.filter_by_rating(number)
+    where('rating > ?', number)
   end
 end

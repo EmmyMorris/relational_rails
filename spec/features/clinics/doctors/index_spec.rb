@@ -114,10 +114,9 @@ RSpec.describe 'Clinics doctors index' do
     expect(page).to have_content('George')
     expect(page).to have_content('Julie')
 
-    # What's the minimum rating for a doctor you'd like to see?
+    fill_in '', with: '2.5'
     save_and_open_page
-    fill_in 'Sort by rating', with: '2.5'
-    click_button "Sort Doctor Rating"
+    click_button "Filter Doctors by Rating"
 
     expect(current_path).to eq("/clinics/#{clinic.id}/doctors")
     expect(page).to have_content('Brian')

@@ -1,12 +1,12 @@
 class ClinicDoctorsController < ApplicationController
   def index
     @clinic = Clinic.find(params[:clinic_id])
-    if params[:order_alphabetically] == "true"
+    @doctors = @clinic.doctors
+    if params[:order_alphabetically]
       @doctors = @clinic.doctors.order_alphabetically
-    elsif params[:sort_by_rating] == "true"
-      @doctors = @clinic.doctors.sort_by_rating(number)
-    else
-      @doctors = @clinic.doctors
+    end
+    if params[:filter_by_rating]
+      @doctors = @clinic.doctors.filter_by_rating(params[:filter_by_rating])
     end
   end
 

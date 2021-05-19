@@ -5,11 +5,10 @@
 <%= link_to "Doctor Index", "/doctors" %>
 <h1>Doctor's Attributes</h1>
 
-<%= form_with url:  "/clinics/#{@clinic.id}/doctors?sort_by_rating=true", method: :post, local: true do |form| %>
-  <%= form.label :sort_by_rating %>
-  <%= form.text_field :sort_by_rating, :placeholder => '3.0' %>
-  <% form.hidden_field :rating %>
-  <%= form.submit "Sort Doctor Rating" %>
+<%= form_with url: "/clinics/#{@clinic.id}/doctors", method: :get, local: true do |form| %>
+  <%= form.label :filter_by_rating %>
+  <%= form.text_field :filter_by_rating %>
+  <%= form.submit "Filter Doctors by Rating" %>
 <% end %>
 <br>
 <br>
