@@ -94,4 +94,30 @@ RSpec.describe "hospital patient index page", type: :feature do
     expect(page).to have_content('77')
     expect(page).to have_content('true')
   end
+
+  it 'displays records over given threshold' do
+    # User Story 21, Display Records Over a Given Threshold (x2)
+    # As a visitor
+    # When I visit the Parent's children Index Page
+    # I see a form that allows me to input a number value
+    # When I input a number value and click the submit button that reads 'Only return records with more than `number` of `column_name`'
+    # Then I am brought back to the current index page with only the records that meet that threshold shown.
+    hospital = Hospital.create!(name: 'St. Johns', max_capacity: false, beds: 300)
+    miko = hospital.patients.create!(name: 'Miko', visitors: true, age: 37)
+    tyler = hospital.patients.create!(name: 'Tyler', visitors: false, age: 20)
+
+    visit "hospitals/#{hospital.id}/patients"
+    expect(page).to have_content('Miko')
+    expect(page).to have_content('Tyler')
+
+    fill_in 'Filter by age', with: '30'
+    
+    click_button "Filter Patients by Age"
+
+    expect(current_path).to eq("/hospitals/#{hospital.id}/patients")
+    expect(page).to have_content('Miko')
+    expect(page).not_to have_content('Tyler')
+    expect(page).to have_content('37')
+    expect(page).to have_content('true')
+  end
 end

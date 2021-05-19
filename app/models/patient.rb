@@ -8,4 +8,8 @@ class Patient < ApplicationRecord
   def self.order_alphabetically
     self.all.order(:name)
   end
+
+  def self.filter_by_age(number)
+    where('age > ?', number)
+  end
 end

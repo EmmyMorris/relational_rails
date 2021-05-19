@@ -114,8 +114,8 @@ RSpec.describe 'Clinics doctors index' do
     expect(page).to have_content('George')
     expect(page).to have_content('Julie')
 
-    fill_in '', with: '2.5'
-    save_and_open_page
+    fill_in 'Filter by rating', with: '2.5'
+    
     click_button "Filter Doctors by Rating"
 
     expect(current_path).to eq("/clinics/#{clinic.id}/doctors")
