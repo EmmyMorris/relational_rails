@@ -25,6 +25,7 @@ Rails.application.routes.draw do
 
 
   get '/clinics', to: 'clinics#index'
+  delete '/clinics', to: 'clinics#destroy'
   get '/clinics/new', to: 'clinics#new'
   delete '/clinics/:id', to: 'clinics#destroy'
   get '/clinics/:id/edit', to: 'clinics#edit'
