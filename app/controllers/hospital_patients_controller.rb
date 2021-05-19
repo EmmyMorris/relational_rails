@@ -35,4 +35,11 @@ class HospitalPatientsController < ApplicationController
      visitors: params[:visitors])
     redirect_to "/hospitals/#{hospital.id}/patients"
   end
+
+  def destroy
+    @hospital = Hospital.find(params[:hospital_id])
+    @patient = Patient.find(params[:id])
+    @patient.destroy
+    redirect_to "/hospitals/#{@hospital.id}/patients"
+  end
 end
