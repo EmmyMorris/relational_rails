@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+
+ body {
+   background: rgba(240, 240, 240, 0.3);
+}
+
+ h1 {
+   color:rgb(0, 0, 110);
+   text-align: left;
+ }
+
+ h2 {
+   color:rgb(0, 0, 90);
+   font-size: 28px;
+ }
+
+ h3 {
+   color:rgb(0, 0, 90);
+   text-align: left;
+   font-size: 25px;
+ }
+
+h4 {
+  color: SteelBlue;
+  text-align: left;
+}
+
+h5 {
+  color: SteelBlue;
+}
+.header {
+  width: 100%;
+  margin-bottom: 30px;
+  display: block;
+  text-align: left;
+  padding: 15px;
+  font-size: 20px;
+  background: rgba(120, 120, 120, 0.3);
+}

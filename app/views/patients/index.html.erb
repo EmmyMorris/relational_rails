@@ -1,10 +1,11 @@
+<div class="header">
 <%= link_to "Hospital Index", "/hospitals" %>
 <%= link_to "Patient Index", "/patients" %>
 <%= link_to "Clinic Index", "/clinics" %>
 <%= link_to "Doctor Index", "/doctors" %>
 <a href="/patients/:id"></a>
 <h1>All Patients</h1>
-
+</div>
 <% @patients.each do |patient| %>
   <h3>Name: <%= patient.name %></h3>
   <p>id: <%= patient.id %></p>
@@ -16,4 +17,7 @@
   <%= button_to "Update Patient #{patient.name}", "/patients/#{patient.id}/edit", method: :get %>
   <br>
   <%= link_to "Delete Patient #{patient.name}", "/patients/#{patient.id}", method: :delete %>
+  <br>
+  <br>
+  <hr>
 <% end %>

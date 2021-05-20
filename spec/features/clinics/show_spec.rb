@@ -63,7 +63,7 @@ RSpec.describe "clinics show page", type: :feature do
     clinic = Clinic.create!(name: 'First Priority', open: false, computers: 80)
     visit "/clinics/#{clinic.id}"
 
-    click_on "Clinic-Doctor Index"
+    click_on "Doctors at #{clinic.name}"
     expect(current_path).to eq("/clinics/#{clinic.id}/doctors")
   end
 
