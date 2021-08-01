@@ -1,5 +1,7 @@
-# README
-![alt text](/download.png)
+# Relational Rails
+
+<img width="400" alt="database schema diagram" src="/download.png">
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
