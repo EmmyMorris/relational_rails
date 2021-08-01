@@ -1,26 +1,37 @@
 # Relational Rails
+### About
 
+Relational Rails is a rails app using two many to many relationships built in 10 days, that allow users to CRUD resources. This repo serves as an introduction to building simple Rails apps. It was assigned as a project for Module 2 of the Backend Development program for the Turing School of Software and Design.
+
+[👀 Visit the app on Localhost:3000](http://localhost:3000/)
+
+## Local Setup
+
+1. Fork and Clone the repo
+2. Install gem packages: `bundle install`
+3. Setup the database: `rails db:create`
+4. Run migrations: ` rails db:migrate`
+5. Seed the database: `rails db:seed`
+
+### Database Design
 <img width="400" alt="database schema diagram" src="/download.png">
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Important Gems
+Testing
+* [rspec-rails](https://github.com/rspec/rspec-rails)
+* [capybara](https://github.com/teamcapybara/capybara)
+* [shoulda-matchers](https://github.com/thoughtbot/shoulda-matchers)
+* [simplecov](https://github.com/simplecov-ruby/simplecov)
+* [orderly](https://github.com/jmondo/orderly)
+* [launchy](https://github.com/copiousfreetime/launchy)
 
-Things you may want to cover:
+## Versions
 
-* Ruby version
+- Ruby 2.7.2
 
-* System dependencies
+- Rails 5.2.5
 
-* Configuration
+## Authors
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Sidarth Bagawandoss - [sidarth20](https://github.com/Sidarth20)
+- Emmy Morris - [emmymorris](https://github.com/EmmyMorris)
