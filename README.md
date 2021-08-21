@@ -3,9 +3,8 @@
 
 Relational Rails is a rails app using two one to many relationships built in 10 days, that allow users to CRUD resources. This repo serves as an introduction to building simple Rails apps. It was assigned as a project for Module 2 of the Backend Development program for the Turing School of Software and Design.
 
-[👀 Visit the app on Localhost:3000](http://localhost:3000/)
 1. Start the server- `rails s`
-2. Visit the app on Localhost:3000
+2. [👀 Visit the app on Localhost:3000](http://localhost:3000/)
 
 100% test coverge!
 
