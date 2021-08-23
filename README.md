@@ -28,6 +28,17 @@ Testing
 * [orderly](https://github.com/jmondo/orderly)
 * [launchy](https://github.com/copiousfreetime/launchy)
 
+## Testing
+* RSpec and Capybara were used for unit and integration testing and project development adhered to TDD principles.
+* WebMock was used to stub out API requests and actual requests are blocked from the test environment.
+* Simplecov was used to track total test coverage.
+* To run our test suite, RSpec, enter `$ bundle exec rspec` in the terminal.
+* To see a coverage report enter `$ open coverage/index.html`
+* SimpleCov test coverage is at 100.00%:
+
+<img width="1399" alt="Relational Rails Coverage Report" src="https://user-images.githubusercontent.com/77904287/130531547-1b54aa71-541a-4cbc-a98e-b1ca40f4c0f6.png">
+
+
 ## Versions
 
 - Ruby 2.7.2
