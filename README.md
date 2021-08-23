@@ -36,7 +36,7 @@ Testing
 * To see a coverage report enter `$ open coverage/index.html`
 * SimpleCov test coverage is at 100.00%:
 
-<img width="1399" alt="Relational Rails Coverage Report" src="https://user-images.githubusercontent.com/77904287/130531547-1b54aa71-541a-4cbc-a98e-b1ca40f4c0f6.png">
+<img width="400" alt="Relational Rails Coverage Report" src="https://user-images.githubusercontent.com/77904287/130531547-1b54aa71-541a-4cbc-a98e-b1ca40f4c0f6.png">
 
 
 ## Versions
