@@ -11,10 +11,7 @@ class ClinicsController < ApplicationController
   end
 
   def create
-    clinic = Clinic.create!(
-      name: params[:name],
-      computers: params[:computers],
-      open: params[:open])
+    clinic = Clinic.create!(clinic_params)
     redirect_to "/clinics"
   end
 
@@ -24,10 +21,7 @@ class ClinicsController < ApplicationController
 
   def update
     clinic = Clinic.find(params[:id])
-    clinic.update(
-     name: params[:name],
-     computers: params[:computers],
-     open: params[:open])
+    clinic.update(clinic_params)
     redirect_to "/clinics/#{clinic.id}"
   end
 
