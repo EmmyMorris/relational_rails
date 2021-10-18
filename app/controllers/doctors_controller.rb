@@ -13,10 +13,7 @@ class DoctorsController < ApplicationController
 
   def update
     doctor = Doctor.find(params[:id])
-    doctor.update(
-     name: params[:name],
-     rating: params[:rating],
-     available: params[:available])
+    doctor.update(doctor_params)
     redirect_to "/doctors/#{doctor.id}"
   end
 
@@ -24,5 +21,11 @@ class DoctorsController < ApplicationController
     @doctor = Doctor.find(params[:id])
     @doctor.destroy
     redirect_to '/doctors'
+  end
+
+  private
+
+  def doctor_params
+    params.permit(:name, :available, :rating)
   end
 end
