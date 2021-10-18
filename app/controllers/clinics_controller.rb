@@ -36,4 +36,10 @@ class ClinicsController < ApplicationController
     @clinic.destroy
     redirect_to "/clinics"
   end
+
+  private
+
+  def clinic_params
+    params.permit(:name, :open, :computers)
+  end
 end
