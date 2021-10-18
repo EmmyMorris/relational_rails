@@ -1,5 +1,6 @@
 class ClinicDoctorsController < ApplicationController
   def index
+    # require "pry"; binding.pry
     @clinic = Clinic.find(params[:clinic_id])
     @doctors = @clinic.doctors
     if params[:order_alphabetically]
@@ -43,5 +44,11 @@ class ClinicDoctorsController < ApplicationController
     doctor = clinic.doctors.find(params[:id])
     doctor.destroy
     redirect_to "/clinics/#{clinic.id}/doctors"
+  end
+
+  private
+
+  def doctor_params
+    params.permit(:name, :available, :rating, :clinic_id)
   end
 end
