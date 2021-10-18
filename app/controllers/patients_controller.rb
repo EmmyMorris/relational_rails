@@ -13,10 +13,7 @@ class PatientsController < ApplicationController
 
   def update
     patient = Patient.find(params[:id])
-    patient.update(
-     name: params[:name],
-     age: params[:age],
-     visitors: params[:visitors])
+    patient.update(patient_params)
     redirect_to "/patients/#{patient.id}"
   end
 
@@ -24,5 +21,11 @@ class PatientsController < ApplicationController
     @patient = Patient.find(params[:id])
     @patient.destroy
     redirect_to "/patients"
+  end
+
+  private
+
+  def patient_params
+    params.permit(:name, :visitors, :age)
   end
 end
