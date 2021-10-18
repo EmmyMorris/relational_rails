@@ -1,6 +1,5 @@
 class ClinicDoctorsController < ApplicationController
   def index
-    # require "pry"; binding.pry
     @clinic = Clinic.find(params[:clinic_id])
     @doctors = @clinic.doctors
     if params[:order_alphabetically]
@@ -17,10 +16,7 @@ class ClinicDoctorsController < ApplicationController
 
   def create
     clinic = Clinic.find(params[:clinic_id])
-    doctor = clinic.doctors.create!(
-      name: params[:name],
-      rating: params[:rating],
-      available: params[:available])
+    doctor = clinic.doctors.create!(doctor_params)
     redirect_to "/clinics/#{clinic.id}/doctors"
   end
 
@@ -32,10 +28,7 @@ class ClinicDoctorsController < ApplicationController
   def update
     clinic = Clinic.find(params[:clinic_id])
     doctor = clinic.doctors.find(params[:id])
-    doctor.update(
-     name: params[:name],
-     rating: params[:rating],
-     available: params[:available])
+    doctor.update(doctor_params)
     redirect_to "/clinics/#{clinic.id}/doctors"
   end
 
