@@ -1,15 +1,9 @@
 <%= form_with url: '/hospitals', method: :post, local: true do |form| %>
   <%= form.label :hospital_name %>
-  <%= form.text_field :name %>
-  <br>
-  <br>
+  <%= form.text_field :name %><br><br>
   <%= form.label :beds %>
-  <%= form.text_field :beds %>
- <br>
- <br>
- <%= form.label :max_capacity %>
- <%= form.text_field :max_capacity %>
- <br>
- <br>
+  <%= form.text_field :beds %><br><br>
+  <%= form.label :max_capacity %>
+  <%= form.text_field :max_capacity %><br><br>
   <%= form.submit "Create Hospital" %>
 <% end %>

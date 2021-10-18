@@ -1,15 +1,9 @@
 <%= form_with url: '/clinics', method: :post, local: true do |form| %>
   <%= form.label :clinic_name %>
-  <%= form.text_field :name %>
-  <br>
-  <br>
+  <%= form.text_field :name %><br><br>
   <%= form.label :computers %>
-  <%= form.text_field :computers %>
- <br>
- <br>
+  <%= form.text_field :computers %><br><br>
  <%= form.label :open %>
- <%= form.text_field :open %>
- <br>
- <br>
+ <%= form.text_field :open %><br><br>
   <%= form.submit "Create Clinic" %>
 <% end %>

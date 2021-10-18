@@ -8,16 +8,13 @@
 </div>
 <% @patients.each do |patient| %>
   <h3>Name: <%= patient.name %></h3>
-  <p>id: <%= patient.id %></p>
+  <p>ID: <%= patient.id %></p>
   <p>Visitors: <%= patient.visitors %></p>
   <p>Age: <%= patient.age %></p>
   <p>Hospital id: <%= patient.hospital_id %></p>
   <p>Updated at: <%= patient.updated_at %></p>
   <p>Created at: <%= patient.created_at %></p>
-  <%= button_to "Update Patient #{patient.name}", "/patients/#{patient.id}/edit", method: :get %>
-  <br>
-  <%= link_to "Delete Patient #{patient.name}", "/patients/#{patient.id}", method: :delete %>
-  <br>
-  <br>
-  <hr>
+
+  <%= button_to "Update Patient #{patient.name}", "/patients/#{patient.id}/edit", method: :get %>  <br>
+  <%= link_to "Delete Patient #{patient.name}", "/patients/#{patient.id}", method: :delete %><br><br><hr>
 <% end %>

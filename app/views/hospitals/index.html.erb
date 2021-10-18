@@ -9,12 +9,7 @@
 <%= link_to "New Hospital", "/hospitals/new" %>
 
 <% @hospitals.each do |hospital| %>
-  <h3><%= hospital.name %>: <%= hospital.created_at %></h3>
-  <br>
-  <%= button_to "Edit #{hospital.name}", "/hospitals/#{hospital.id}/edit", method: :get %>
-  <br>
-  <%= link_to "Delete Hospital #{hospital.name}", "/hospitals/#{hospital.id}", method: :delete %>
-  <br>
-  <br>
-  <hr>
+  <h3><%= hospital.name %>: <%= hospital.created_at %></h3><br>
+  <%= button_to "Edit #{hospital.name}", "/hospitals/#{hospital.id}/edit", method: :get %><br>
+  <%= link_to "Delete Hospital #{hospital.name}", "/hospitals/#{hospital.id}", method: :delete %><br><br><hr>
 <% end %>

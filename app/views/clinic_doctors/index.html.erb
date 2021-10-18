@@ -6,26 +6,21 @@
 
 <h1>Doctors at <%= @clinic.name  %></h1>
 </div>
+
 <%= form_with url: "/clinics/#{@clinic.id}/doctors", method: :get, local: true do |form| %>
   <%= form.label :filter_by_rating %>
   <%= form.text_field :filter_by_rating %>
   <%= form.submit "Filter Doctors by Rating" %>
-<% end %>
-<br>
-<br>
-<%= link_to "Sort Alphabetically", "/clinics/#{@clinic.id}/doctors?order_alphabetically=true" %>
-<br>
+<% end %><br><br>
+
+<%= link_to "Sort Alphabetically", "/clinics/#{@clinic.id}/doctors?order_alphabetically=true" %><br>
 <%= link_to "Create Doctor", "/clinics/#{@clinic.id}/doctors/new" %>
 
 <% @doctors.each do |doctor| %>
   <h3>Name: <%= doctor.name %></h3>
-  <p>id: <%= doctor.id %></p>
+  <p>ID: <%= doctor.id %></p>
   <p>Available: <%= doctor.available %></p>
   <p>Rating: <%= doctor.rating %></p>
-  <%= button_to "Edit Doctor #{doctor.name}", "/clinics/#{@clinic.id}/doctors/#{doctor.id}/edit", method: :get %>
-  <br>
-  <%= link_to "Delete Doctor #{doctor.name}", "/clinics/#{@clinic.id}/doctors/#{doctor.id}", method: :delete %>
-  <br>
-  <br>
-  <hr>
+  <%= button_to "Edit Doctor #{doctor.name}", "/clinics/#{@clinic.id}/doctors/#{doctor.id}/edit", method: :get %><br>
+  <%= link_to "Delete Doctor #{doctor.name}", "/clinics/#{@clinic.id}/doctors/#{doctor.id}", method: :delete %><br><br><hr>
 <% end %>
