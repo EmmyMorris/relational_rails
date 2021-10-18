@@ -10,11 +10,9 @@
   <%= form.label :filter_by_age %>
   <%= form.text_field :filter_by_age %>
   <%= form.submit "Filter Patients by Age" %>
-<% end %>
-<br>
-<br>
-<%= link_to "Sort Alphabetically", "/hospitals/#{@hospital.id}/patients?order_alphabetically=true" %>
-<br>
+<% end %><br><br>
+
+<%= link_to "Sort Alphabetically", "/hospitals/#{@hospital.id}/patients?order_alphabetically=true" %><br>
 <%= link_to "Create Patient", "/hospitals/#{@hospital.id}/patients/new" %>
 
 <% @patients.each do |patient| %>
@@ -22,10 +20,7 @@
   <p>id: <%= patient.id %></p
   <p>Visitors: <%= patient.visitors %></p>
   <p>Age: <%= patient.age %></p>
-  <%= button_to "Edit Patient #{patient.name}", "/hospitals/#{@hospital.id}/patients/#{patient.id}/edit", method: :get %>
-  <br>
-  <%= link_to "Delete Patient #{patient.name}", "/hospitals/#{@hospital.id}/patients/#{patient.id}", method: :delete %>
-  <br>
-  <br>
-  <hr>
+  
+  <%= button_to "Edit Patient #{patient.name}", "/hospitals/#{@hospital.id}/patients/#{patient.id}/edit", method: :get %><br>
+  <%= link_to "Delete Patient #{patient.name}", "/hospitals/#{@hospital.id}/patients/#{patient.id}", method: :delete %><br><br><hr>
 <% end %>

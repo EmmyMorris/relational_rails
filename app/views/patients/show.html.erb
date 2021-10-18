@@ -7,13 +7,12 @@
 <h1>Patient  <%= @patient.name %></h1>
 </div>
 <h3>Name: <%= @patient.name %></h3>
-<p>id: <%= @patient.id %></p>
+<p>ID: <%= @patient.id %></p>
 <p>Visitors: <%= @patient.visitors %></p>
 <p>Age: <%= @patient.age %></p>
 <p>Hospital id: <%= @patient.hospital_id %></p>
 <p>Created at: <%= @patient.created_at %></p>
-<p>Updated at: <%= @patient.updated_at %></p>
-<br>
-<%= link_to "Update Patient #{@patient.name}", "/patients/#{@patient.id}/edit" %>
-<br>
+<p>Updated at: <%= @patient.updated_at %></p><br>
+
+<%= link_to "Update Patient #{@patient.name}", "/patients/#{@patient.id}/edit" %><br>
 <%= link_to "Delete Patient #{@patient.name}", "/patients/#{@patient.id}", method: :delete %>

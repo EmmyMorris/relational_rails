@@ -15,17 +15,17 @@ RSpec.describe "patient index page", type: :feature do
     hospital_2.patients.create!(name: 'Luke', visitors: false, age: 78)
 
     visit "/patients/#{hospital.patients.first.id}"
-    expect(page).to have_content("id: #{hospital.patients.first.id}")
+    expect(page).to have_content("ID: #{hospital.patients.first.id}")
 
     visit "/patients/#{hospital.patients.second.id}"
-    expect(page).to have_content("id: #{hospital.patients.second.id}")
+    expect(page).to have_content("ID: #{hospital.patients.second.id}")
 
 
     visit "/patients/#{hospital_2.patients.first.id}"
-    expect(page).to have_content("id: #{hospital_2.patients.first.id}")
+    expect(page).to have_content("ID: #{hospital_2.patients.first.id}")
 
     visit "/patients/#{hospital_2.patients.second.id}"
-    expect(page).to have_content("id: #{hospital_2.patients.second.id}")
+    expect(page).to have_content("ID: #{hospital_2.patients.second.id}")
   end
 
   it "Has links to child index" do

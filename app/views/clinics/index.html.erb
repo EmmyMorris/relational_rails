@@ -9,12 +9,7 @@
 <%= link_to "New Clinic", "/clinics/new" %>
 
 <% @clinics.each do |clinic| %>
-  <h3><%= clinic.name%>: <%= clinic.created_at %> </h3>
-  <br>
-  <%= button_to "Edit #{clinic.name}", "/clinics/#{clinic.id}/edit", method: :get %>
-  <br>
-  <%= link_to "Delete Clinic #{clinic.name}", "/clinics/#{clinic.id}", method: :delete %>
-  <br>
-  <br>
-  <hr>
+  <h3><%= clinic.name%>: <%= clinic.created_at %> </h3><br>
+  <%= button_to "Edit #{clinic.name}", "/clinics/#{clinic.id}/edit", method: :get %><br>
+  <%= link_to "Delete Clinic #{clinic.name}", "/clinics/#{clinic.id}", method: :delete %><br><br><hr>
 <% end %>

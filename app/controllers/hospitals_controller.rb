@@ -11,10 +11,7 @@ class HospitalsController < ApplicationController
   end
 
   def create
-    hospital = Hospital.create!(
-      name: params[:name],
-      beds: params[:beds],
-      max_capacity: params[:max_capacity])
+    hospital = Hospital.create!(hospital_params)
     redirect_to "/hospitals"
   end
 
@@ -24,10 +21,7 @@ class HospitalsController < ApplicationController
 
   def update
     hospital = Hospital.find(params[:id])
-    hospital.update(
-     name: params[:name],
-     beds: params[:beds],
-     max_capacity: params[:max_capacity])
+    hospital.update(hospital_params)
     redirect_to "/hospitals/#{hospital.id}"
   end
 
@@ -35,5 +29,11 @@ class HospitalsController < ApplicationController
     @hospital = Hospital.find(params[:id])
     @hospital.destroy
     redirect_to "/hospitals"
+  end
+
+  private
+  
+  def hospital_params
+    params.permit(:name, :max_capacity, :beds)
   end
 end

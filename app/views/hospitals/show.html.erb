@@ -4,8 +4,8 @@
 <%= link_to "Clinic Index", "/clinics" %>
 <%= link_to "Doctor Index", "/doctors" %>
 <a href="/hospitals"></a>
-<h1>Hospital: <%= @hospital.name %></h1>
-<br><%= link_to "Patients at #{@hospital.name}", "/hospitals/#{@hospital.id}/patients" %>
+<h1>Hospital: <%= @hospital.name %></h1><br>
+<%= link_to "Patients at #{@hospital.name}", "/hospitals/#{@hospital.id}/patients" %>
 </div>
 
 <p>Patients: <%= @hospital.patients.count %></p>
@@ -14,8 +14,7 @@
 <p>Max Capacity: <%= @hospital.max_capacity %></p>
 <p>Beds: <%= @hospital.beds %></p>
 <p>Created at: <%= @hospital.created_at %></p>
-<p>Updated at: <%= @hospital.updated_at %></p>
-<br>
-<%= link_to "Update #{@hospital.name}", "/hospitals/#{@hospital.id}/edit" %>
-<br>
+<p>Updated at: <%= @hospital.updated_at %></p><br>
+
+<%= link_to "Update #{@hospital.name}", "/hospitals/#{@hospital.id}/edit" %><br>
 <%= link_to "Delete Hospital #{@hospital.name}", "/hospitals/#{@hospital.id}", method: :delete %>

@@ -1,15 +1,9 @@
 <%= form_with url:  "/clinics/#{@clinic.id}/doctors/#{@doctor.id}", method: :patch, local: true do |form| %>
   <%= form.label :name %>
-  <%= form.text_field :name %>
-  <br>
-  <br>
+  <%= form.text_field :name %><br><br>
   <%= form.label :rating %>
-  <%= form.text_field :rating %>
-  <br>
-  <br>
+  <%= form.text_field :rating %><br><br>
   <%= form.label :available %>
-  <%= form.text_field :available %>
-  <br>
-  <br>
+  <%= form.text_field :available %><br><br>
   <%= form.submit "Update Doctor" %>
 <% end %>
